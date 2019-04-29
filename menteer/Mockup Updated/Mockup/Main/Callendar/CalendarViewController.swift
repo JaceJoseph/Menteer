@@ -21,6 +21,7 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var switchSegment: UISegmentedControl!
     @IBOutlet weak var scheduleView: UIView!
     
+    @IBOutlet weak var plusButton: UIButton!
     @IBOutlet var containerView: UIView!
     
     let months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
@@ -139,9 +140,13 @@ class CalendarViewController: UIViewController {
         if switchSegment.selectedSegmentIndex == 0{
             scheduleView.isHidden = true
             containerView.isHidden = false
+            plusButton.isHidden = false
+            plusButton.isEnabled = true
         }else{
             scheduleView.isHidden = false
             containerView.isHidden = true
+            plusButton.isHidden = true
+            plusButton.isEnabled = false
         }
     }
     

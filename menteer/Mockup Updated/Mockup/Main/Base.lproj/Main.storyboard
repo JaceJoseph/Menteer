@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="exA-tV-F6r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qfg-4J-UFT">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -459,6 +459,7 @@
                         <outlet property="monthLabel" destination="FQu-s6-R6O" id="8az-qp-7vh"/>
                         <outlet property="personImage" destination="rve-cS-Axb" id="Mzg-NB-2fg"/>
                         <outlet property="personNameLabel" destination="1ev-Qk-QiK" id="4kI-Ci-hSs"/>
+                        <outlet property="plusButton" destination="t2M-Wb-Ect" id="Apx-aj-Tx8"/>
                         <outlet property="scheduleView" destination="Srv-ue-fK8" id="fvF-iL-K0d"/>
                         <outlet property="sessionLabel" destination="jPc-tY-1lo" id="8Pb-ku-ZtE"/>
                         <outlet property="switchSegment" destination="Cb6-M6-j9P" id="jNb-qH-SMk"/>

@@ -65,7 +65,7 @@ class ConnectTableViewCell: UITableViewCell {
     @IBAction func tapRequestButton(_ sender: UIButton) {
         delegate?.didTapRequestButton()
         if connectButton.titleLabel?.text == "Request"{
-            connectButton.setTitle("Requested", for: .normal)
+            connectButton.setTitle("Cancel Request", for: .normal)
             connectButton.tintColor = #colorLiteral(red: 0.2549019608, green: 0.6117647059, blue: 1, alpha: 1)
             connectButton.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         }else{
