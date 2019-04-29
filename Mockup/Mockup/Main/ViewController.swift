@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! CalendarViewController
+        _ = segue.destination as! CalendarViewController
     }
 
 }

@@ -33,6 +33,7 @@ class User{
     var education:[textWithIcon]
     var others:[textWithIcon]
     var material:String?
+    var method:String?
     
     init(name:String,image:UIImage,phone:String,email:String,reviews:[textWithIcon],jobExperience:[textWithIcon],education:[textWithIcon],others:[textWithIcon],goal:[String],desc:String) {
         self.name = name

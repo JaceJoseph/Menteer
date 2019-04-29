@@ -12,7 +12,7 @@ class MentorProfileViewController: UIViewController {
     
     var profileDetail:User?
     
-    let sectionHeader=["Introduction","Reccomendation","Work Experiences","Educations","Others"]
+    let sectionHeader=["Introduction","Method","Reccomendation","Work Experiences","Educations","Others"]
     
     @IBOutlet weak var profileDetailImage: UIImageView!
     @IBOutlet weak var profileNameLabel: UILabel!
@@ -69,7 +69,13 @@ extension MentorProfileViewController:UITableViewDelegate,UITableViewDataSource{
         case 0:
             return 125
         case 1:
-            return 130
+            if profileDetail?.method == nil{
+                return 0
+            }else{
+                return 125
+            }
+        case 2:
+            return 140
         default:
             return 75
         }
@@ -80,20 +86,29 @@ extension MentorProfileViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionHeader[section]
+        switch section {
+        case 1:
+            if profileDetail?.method == nil{
+                return ""
+            }else{
+                return sectionHeader[section]
+            }
+        default:
+             return sectionHeader[section]
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0:
+        case 0,1:
             return 1
-        case 1:
-            return (profileDetail?.reviews.count ?? 0)
         case 2:
-            return (profileDetail?.jobExperience.count ?? 0)
+            return (profileDetail?.reviews.count ?? 0)
         case 3:
-            return profileDetail?.education.count ?? 0
+            return (profileDetail?.jobExperience.count ?? 0)
         case 4:
+            return profileDetail?.education.count ?? 0
+        case 5:
             return profileDetail?.others.count ?? 0
         default:
             return 0
@@ -110,27 +125,34 @@ extension MentorProfileViewController:UITableViewDelegate,UITableViewDataSource{
             return cell
             
         case 1:
+            guard let row = profileDetail?.method else { return UITableViewCell()  }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "descriptionCell")as! ProfileDescriptionTableViewCell
+            
+            cell.setCell(data: row)
+            return cell
+            
+        case 2:
             guard let row = profileDetail?.reviews[indexPath.row] else { return UITableViewCell() }
             let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell") as! ProfileReviewsTableViewCell
             
             cell.setCell(data:row)
             return cell
             
-        case 2:
+        case 3:
             guard let row = profileDetail?.jobExperience[indexPath.row] else { return UITableViewCell() }
             let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCell") as! ProfileExperiencesTableViewCell
             
             cell.setCell(data:row)
             return cell
             
-        case 3:
+        case 4:
             guard let row = profileDetail?.education[indexPath.row] else { return UITableViewCell() }
             let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCell") as! ProfileExperiencesTableViewCell
             
             cell.setCell(data: row)
             return cell
             
-        case 4:
+        case 5:
             guard let row = profileDetail?.others[indexPath.row] else { return UITableViewCell() }
             let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCell") as! ProfileExperiencesTableViewCell
             

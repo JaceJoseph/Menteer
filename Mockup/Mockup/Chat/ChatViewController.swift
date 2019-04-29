@@ -30,17 +30,17 @@ class ChatViewController: UIViewController {
     
     func createPeopleToChatArray()->[PersonToChat]{
         var tempArray:[PersonToChat]=[]
-        tempArray.append(PersonToChat(name: "John", image:#imageLiteral(resourceName: "ss-uipickerview-card")))
-        tempArray.append(PersonToChat(name: "Jafar", image:#imageLiteral(resourceName: "dev-setup")))
-        tempArray.append(PersonToChat(name: "James", image:#imageLiteral(resourceName: "beginner-first-app")))
+        tempArray.append(PersonToChat(name: "Terry Boggart", image:#imageLiteral(resourceName: "picture Icon")))
+        tempArray.append(PersonToChat(name: "Jafar", image:#imageLiteral(resourceName: "Profile icon menu bar - Bailey")))
+        tempArray.append(PersonToChat(name: "Jack Kun", image:#imageLiteral(resourceName: "Castro")))
         
         return tempArray
     }
     
     func createPeopleToChatArray2()->[PersonToChat]{
         var tempArray:[PersonToChat]=[]
-        tempArray.append(PersonToChat(name: "Amin", image:#imageLiteral(resourceName: "int-overview")))
-        tempArray.append(PersonToChat(name: "Agus", image:#imageLiteral(resourceName: "dev-setup")))
+        tempArray.append(PersonToChat(name: "Kalashidan", image:#imageLiteral(resourceName: "Bagus")))
+        tempArray.append(PersonToChat(name: "Martin", image:#imageLiteral(resourceName: "Ayu")))
         
         return tempArray
     }
@@ -70,6 +70,10 @@ class ChatViewController: UIViewController {
 }
 
 extension ChatViewController:UITableViewDataSource,UITableViewDelegate{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return masterArrayDisplay.count
     }

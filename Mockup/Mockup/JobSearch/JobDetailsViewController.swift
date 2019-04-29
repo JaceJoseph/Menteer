@@ -42,7 +42,7 @@ extension JobDetailsViewController:UITableViewDataSource,UITableViewDelegate{
         view.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        header.textLabel?.font = UIFont(name: "SF Pro Display", size: 22)
+        header.textLabel?.font = UIFont.systemFont(ofSize: 22)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
